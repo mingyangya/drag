@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>drag</title>
+    <style>
+        .drag_wrap {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            overflow: auto;
+            box-sizing: border-box;
+            border: 1px solid #333;
+        }
+
+        .drag_ele {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /* border-radius: 50%; */
+            background: #999;
+        }
+
+        .text {
+            color: #f60;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drag-box">
+        <div class="drag_wrap">
+            <div class="drag_ele" draggable="true">
+                <div class="text">1</div>
+            </div>
+        </div>
+    </div>
+
+    <script src='./js//drag.js'></script>
+    <script>
+
+        // import { drag } from './js/drag/js'
+        function initDom() {
+            const distEle = document.querySelector(".drag_wrap"),
+                sourceEle = document.querySelector(".drag_ele"),
+                pos = { top: 0, left: 0 };
+            drag.init({
+                distEle,
+                sourceEle,
+                left: pos.left,
+                top: pos.top,
+                dropCb: ({ top, left, w, h }) => {
+                    console.log("top, left, w, h:", top, left, w, h);
+                   sourceEle.style.top = top + 'px';
+                    sourceEle.style.left = left + 'px';
+                },
+            });
+        }
+        window.onload = () => {
+            initDom();
+        }
+
+    </script>
+
+</body>
+
+</html>
