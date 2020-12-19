@@ -2,11 +2,11 @@
 
 原生拖拽drag
 
-## 开始
+## 安装
 ```
 npm install
 ```
-
+### 运行
 ```
 npm run start
 ```
