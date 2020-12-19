@@ -1,0 +1,25 @@
+{
+  "name": "drag",
+  "version": "0.0.1",
+  "description": "drag",
+  "main": "index.js",
+  "scripts": {
+    "start": " http-server ./src -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyangya/drag.git"
+  },
+  "keywords": [
+    "drag"
+  ],
+  "author": "mingyangya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mingyangya/drag/issues"
+  },
+  "homepage": "https://github.com/mingyangya/drag#readme",
+  "devDependencies": {
+   "http-server":"0.12.3"
+  }
+}
